@@ -24,9 +24,9 @@ app.use(express.urlencoded({ extended: true }))
 const corsOptions = {
     origin: [
       "https://delightful-semolina-c2d3de.netlify.app/",
-//         "http://localhost:3000",
-//         "http://localhost:3001",
-//         "http://localhost:3002",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3002",
 //       "*"
     ],
     credentials: true,
