@@ -12,7 +12,7 @@ exports.register = async (req,res) => {
         if(finddata){
             return(
                 res.status(200).send({
-                    status:true,
+                    status:false,
                     msg:"email already exit"
                 }
                 )
