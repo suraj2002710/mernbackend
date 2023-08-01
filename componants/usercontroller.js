@@ -14,7 +14,7 @@ exports.register = async (req,res) => {
                 res.status(200).send({
                     status:false,
                     msg:"email already exit"
-                }
+                })
                 )
         }
         const img=await cloudinary.uploader.upload(req.file.path,{
