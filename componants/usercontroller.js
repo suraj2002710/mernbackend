@@ -8,6 +8,15 @@ exports.register = async (req,res) => {
     try {
         console.log("user",req.file);
         const { name, email, password } = req.body
+        const finddata= await model.find({email:email})
+        if(finddata){
+            return(
+                res.status(200).send({
+                    status:true,
+                    msg:"email already exit"
+                }
+                )
+        }
         const img=await cloudinary.uploader.upload(req.file.path,{
             folder:"userimage",
             width:150,
