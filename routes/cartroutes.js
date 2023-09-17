@@ -7,7 +7,7 @@ const cart=require("../componants/cartcontrollers")
 router.post("/addtocart",authenticate.isauthenticate,cart.addtocart)
 
 router.delete("/removeitem/:id",authenticate.isauthenticate,cart.removeitem)
-router.get('/loaditem',authenticate.isauthenticate,cart.loadcartitems)
+router.get('/loaditem',authenticate.isauthenticate,authenticate.isauthenticate,cart.loadcartitems)
 
-router.put('/updateitem',cart.updatequatnity)
+router.put('/updateitem',authenticate.isauthenticate,cart.updatequatnity)
 module.exports=router
