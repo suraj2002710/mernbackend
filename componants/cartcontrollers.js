@@ -43,7 +43,6 @@ exports.removeitem=async(req,res)=>{
 exports.updatequatnity=async(req,res)=>{
     try {
         const finddata=await model.find({id:req.query.id})
-        console.log(finddata[0]);
         if(finddata){
             const newqty=finddata[0].quantity
             const itemid=finddata[0].id
