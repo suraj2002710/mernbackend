@@ -43,7 +43,7 @@ exports.removeitem=async(req,res)=>{
 exports.updatequatnity=async(req,res)=>{
     try {
         const finddata=await model.find({id:req.query.id})
-        if(finddata){
+        if(finddata.length){
             const newqty=finddata[0].quantity
             const itemid=finddata[0].id
             // console.log(itemid);
@@ -52,7 +52,16 @@ exports.updatequatnity=async(req,res)=>{
             const data=await model.find({user_id:finddata[0].user_id})
             
                         res.status(200).send({
-                            // msg:"quantity update successfully",
+                            status:true,
+                            msg:"quantity update successfully",
+                   data                                                })
+        }
+
+        else{
+            
+                        res.status(200).send({
+                            status:false,
+                            msg:"quantity update successfully",
                    data                                                })
         }
     } catch (error) {
