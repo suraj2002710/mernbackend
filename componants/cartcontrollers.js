@@ -62,7 +62,7 @@ exports.updatequatnity=async(req,res)=>{
                         res.status(200).send({
                             status:false,
                             msg:"quantity update successfully",
-                   data                                                })
+                                                                   })
         }
     } catch (error) {
         console.log(error);
