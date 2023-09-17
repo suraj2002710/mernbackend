@@ -47,7 +47,7 @@ exports.updatequatnity=async(req,res)=>{
         if(finddata.length){
             
             const newqty=finddata[0].quantity
-            const itemid=finddata[0].id
+            const itemid=finddata[0]._id
             // console.log(itemid);
             const datas=await model.updateOne({_id:itemid},{$set:{quantity:req.query.qty}})
             // console.log(finddata.user_id);
@@ -56,7 +56,7 @@ exports.updatequatnity=async(req,res)=>{
                         res.status(200).send({
                             status:true,
                             msg:"quantity update successfully",
-                   data                                                })
+                             datas                                      })
         }
 
         else{
