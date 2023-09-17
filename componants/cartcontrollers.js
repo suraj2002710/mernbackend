@@ -42,7 +42,7 @@ exports.removeitem=async(req,res)=>{
 
 exports.updatequatnity=async(req,res)=>{
     try {
-        const finddata=await model.find({id:req.query.id})
+        const finddata=await model.find({_id:req.query.id})
         console.log(req.query,finddata)
         if(finddata.length){
             
