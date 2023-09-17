@@ -49,7 +49,7 @@ exports.updatequatnity=async(req,res)=>{
             const newqty=finddata[0].quantity
             const itemid=finddata[0].id
             // console.log(itemid);
-            const datas=await model.updateOne({id:itemid},{quantity:req.query.qty})
+            const datas=await model.updateOne({id:itemid},{$set:{quantity:req.query.qty}})
             // console.log(finddata.user_id);
             const data=await model.find({user_id:finddata[0].user_id})
             
